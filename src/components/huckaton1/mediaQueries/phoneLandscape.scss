@@ -1,0 +1,28 @@
+@import '../mobile';
+& {
+    background: url('../images/huckaton1/page-background.png') 0 40% no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+        display: block;
+        width: $logo-width/1.5;
+        height: $logo-height/1.5;
+        margin-top: $logo-margin-top/4;
+        img {
+            width: 100%;
+        }
+    }
+    .authorization {
+        margin-top: $authorization-form-margin-top/4;
+        .link-wrapper {
+        margin-top: $link-wrapper-margin-top/2;
+        }
+        .username {
+            line-height: $form-elements-height/1.25;
+            background: url('../images/huckaton1/icon-username.png') px(36) px(29) no-repeat, transparentize($main-color, .9);
+            background-size: px(34);
+        }
+    }
+}
