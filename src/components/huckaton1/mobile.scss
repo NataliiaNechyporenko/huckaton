@@ -1,5 +1,7 @@
 $main-color: rgba(255, 255, 255, 1);
-$main-font: normal px(22) 'Montserrat', sans-serif;
+$font-mobile: normal px(22) 'Montserrat', sans-serif;
+$font-tablet: normal px(26) 'Montserrat', sans-serif;
+$font-desktop: normal px(19) 'Montserrat', sans-serif;
 $button-color: #f96332;
 $logo-width: px(191);
 $logo-height: px(206);
@@ -7,52 +9,72 @@ $logo-margin-top: px(220);
 $authorization-form-margin-top: px(268);
 $link-wrapper-margin-top: px(47);
 $form-elements-height: px(94);
+
 & {
-    background: url('../images/huckaton1/page-background.png') no-repeat;
+    background: url('../images/huckaton1/phone-layouts-background.png') no-repeat;
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-        .logo {
-            display: block;
-            width: $logo-width;
-            height: $logo-height;
-            margin-top: $logo-margin-top;
-            img {
-                width: 100%;
-            }
+
+    .logo {
+        display: block;
+        width: px(191);
+        height:  px(206);
+        margin-top: px(220);
+        background: url('../images/huckaton1/logo.png.png') no-repeat;
+        background-size: cover;
+        img {
+            width: 100%;
         }
-        @mixin form-elements ($padding-left: px(103)) {
-                border: 0;
-                box-sizing: border-box;
-                color: $main-color;;
-                font: $main-font;
-                margin-bottom: px(26);
-                -webkit-border-radius: px(47);
-                -moz-border-radius: px(47);
-                border-radius: px(47);
-                line-height: $form-elements-height;
-                padding-left: $padding-left;
-                &::-webkit-input-placeholder { color: $main-color; }
-                &::-moz-placeholder {color: $main-color;}
-                &:-moz-placeholder {color: $main-color;}
-                &:-ms-input-placeholder {color: $main-color;}
-                width: 100%;
-                }
-            @mixin form-links {
-                color: transparentize($main-color, .5);
-                text-decoration: none;
-                font-size: px(19);
-                &active, &hover {
-                    color: $main-color;
-                    text-decoration: none;
-                }
-                &visited {
-                    color: transparentize($main-color, .5);
-                    text-decoration: none;
-                }
-            }
+    }
+    @mixin form-elements ($padding-left: px(103), $form-elements-height: px(94), $form-elements-margin-bottom: px(26), $radius: px(46)) {
+        border: 0;
+        box-sizing: border-box;
+        color: $main-color;
+        font: $font-mobile;
+        margin-bottom: $form-elements-margin-bottom;
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+        line-height: $form-elements-height;
+        padding-left: $padding-left;
+
+        &::-webkit-input-placeholder {
+            color: $main-color;
+        }
+
+        &::-moz-placeholder {
+            color: $main-color;
+        }
+
+        &:-moz-placeholder {
+            color: $main-color;
+        }
+
+        &:-ms-input-placeholder {
+            color: $main-color;
+        }
+        width: 100%;
+    }
+    @mixin form-links {
+        color: transparentize($main-color, .5);
+        text-decoration: none;
+        font-size: px(19);
+
+        &active,
+        &hover {
+            color: $main-color;
+            text-decoration: none;
+        }
+
+        &visited {
+            color: transparentize($main-color, .5);
+            text-decoration: none;
+        }
+    }
+
     .authorization {
         width: px(554);
         margin-top: $authorization-form-margin-top;
@@ -62,25 +84,29 @@ $form-elements-height: px(94);
             background: url('../images/huckaton1/icon-username.png') px(36) px(29) no-repeat, transparentize($main-color, .9);
             background-size: px(38);
         }
+
         .user-password {
             @include form-elements;
             background: url('../images/huckaton1/icon-password.png') px(36) px(23) no-repeat, transparentize($main-color, .9);
             background-size: px(34);
         }
+
         .authorization-form__submit {
             @include form-elements (0);
             background: $button-color;
             font-weight: bold;
             margin-bottom: 0;
-            }
+        }
+
         .link-wrapper {
             display: flex;
-            justify-content:space-between;
-            margin-top: $link-wrapper-margin-top;
+            justify-content: space-between;
+            margin-top: px(47);
         }
+
         a {
             display: block;
-            font: $main-font;
+            font: $font-mobile;
             @include form-links;
         }
     }

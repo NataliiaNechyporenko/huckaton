@@ -1,1 +1,54 @@
 @import '../mobile';
+
+& {
+    background: url('../images/huckaton1/tablet-portrait-background.png') no-repeat;
+    background-size: cover;
+
+    @mixin form-elements-tablet ($padding-left: px(122)) {
+        border: 0;
+        box-sizing: border-box;
+        color: $main-color;
+        font: $font-tablet;
+        margin-bottom: px(25);
+        -webkit-border-radius: px(55);
+        -moz-border-radius: px(55);
+        border-radius: px(55);
+        line-height: px(110);
+        padding-left: $padding-left;
+    }
+    .logo {
+        width: px(224);
+        height:  px(241);
+        margin-top: px(440);
+        margin-left: px(60);
+    }
+    .authorization {
+        width: px(650);
+        margin-top: px(207);
+        margin-left: px(60);
+
+        .username {
+    @include form-elements-tablet;
+    background: url('../images/huckaton1/icon-username-tablet.png') px(43) px(33) no-repeat, transparentize($main-color, .9);
+    background-size: px(44);
+    }
+    .user-password {
+    @include form-elements-tablet;
+    background: url('../images/huckaton1/icon-password-tablet.png') px(43) px(25) no-repeat, transparentize($main-color, .9);
+    background-size: px(44);
+}
+
+.authorization-form__submit {
+    @include form-elements-tablet (0);
+    margin-top: px(50);
+
+    }
+.link-wrapper {
+    margin-top: px(20);
+}
+
+a {
+    font-size: px(22);
+    }
+}
+}
