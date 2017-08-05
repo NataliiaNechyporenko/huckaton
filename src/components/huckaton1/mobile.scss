@@ -29,17 +29,17 @@ $form-elements-height: px(94);
             width: 100%;
         }
     }
-    @mixin form-elements ($padding-left: px(103), $form-elements-height: px(94), $form-elements-margin-bottom: px(26), $radius: px(46)) {
+    @mixin form-elements ($padding-left: px(103)) {
         border: 0;
         box-sizing: border-box;
         color: $main-color;
         font: $font-mobile;
-        margin-bottom: $form-elements-margin-bottom;
-        -webkit-border-radius: $radius;
-        -moz-border-radius: $radius;
-        border-radius: $radius;
-        line-height: $form-elements-height;
-        padding-left: $padding-left;
+        margin-bottom: px(26);
+        -webkit-border-radius: px(46);
+        -moz-border-radius: px(46);
+        border-radius: px(46);
+        height: px(94);
+        padding: 0 0 0 $padding-left;
 
         &::-webkit-input-placeholder {
             color: $main-color;
@@ -87,8 +87,23 @@ $form-elements-height: px(94);
 
         .user-password {
             @include form-elements;
-            background: url('../images/huckaton1/icon-password.png') px(36) px(23) no-repeat, transparentize($main-color, .9);
+            background: url('../images/huckaton1/icon-password.png') px(38) px(23) no-repeat, transparentize($main-color, .9);
             background-size: px(34);
+            &::-webkit-input-placeholder {
+                letter-spacing: px(.6);
+            }
+
+            &::-moz-placeholder {
+                letter-spacing: px(.6);
+            }
+
+            &:-moz-placeholder {
+                letter-spacing: px(.6);
+            }
+
+            &:-ms-input-placeholder {
+                letter-spacing: px(.6);
+            }
         }
 
         .authorization-form__submit {

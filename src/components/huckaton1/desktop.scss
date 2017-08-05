@@ -2,28 +2,29 @@
 & {
     background: url('../images/huckaton1/tablet-landscape-background.png') no-repeat;
     background-size: cover;
+    height: 100%;
 
-    @mixin form-elements-desktop ($padding-left: px(88)) {
+    @mixin form-elements-desktop ($margin-bottom: px(29), $padding-left: px(88)) {
             border: 0;
             box-sizing: border-box;
             color: $main-color;
             font: $font-desktop;
-            margin-bottom: px(30);
+            margin-bottom: $margin-bottom;
             -webkit-border-radius: px(40);
             -moz-border-radius: px(40);
             border-radius: px(40);
-            line-height: px(81);
-            padding-left: $padding-left;
+            height: px(81);
+            padding: 0 0 0 $padding-left;
         }
     .logo {
         width: px(164);
         height: px(176);
-        margin-top: px(414);
+        margin-top: px(394);
 
     }
     .authorization {
-        width: px(485);
-        margin-top: px(160);
+        width: px(475);
+        margin-top: px(151);
 
 
     .username {
@@ -32,14 +33,22 @@
         background-size: px(32);
     }
     .user-password {
-        @include form-elements-desktop;
-        background: url('../images/huckaton1/icon-password-tablet.png') px(43) px(25) no-repeat, transparentize($main-color, .9);
+        @include form-elements-desktop (px(58));
+        background: url('../images/huckaton1/icon-password-tablet.png') px(32) px(20) no-repeat, transparentize($main-color, .9);
         background-size: px(29);
     }
 
     .authorization-form__submit {
-        @include form-elements-desktop (0);
-        margin-top: px(29);
+        @include form-elements-desktop (0, 0);
         }
+
+    .link-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: px(45) 0 px(439);
+    }
+    a {
+        font-size: px(16);
+    }
     }
 }
